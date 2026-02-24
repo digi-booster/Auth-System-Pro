@@ -1,0 +1,19 @@
+{
+    "name": "himan/authsystempro",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Himanshu",
+            "email": "himanshubusiness4@gmail.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

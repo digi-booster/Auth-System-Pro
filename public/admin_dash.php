@@ -44,7 +44,7 @@ $logs = $pdo->query(query: "SELECT user_id, ip_address, device_info, status, cre
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admi Panel</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="../assets/css/output.css">
     <meta name="color-scheme" content="light dark">
     <style>
@@ -160,7 +160,11 @@ $logs = $pdo->query(query: "SELECT user_id, ip_address, device_info, status, cre
                                     </span>
                                 </td>
                                 <td class="p-3 text-right opacity-50 italic">
-                                    <?= (new DateTime(datetime: $log['created_at']))->format(format: 'd-M H:i:s') ?>
+                                    <?php
+                                    $date = new DateTime($log['created_at'], new DateTimeZone('UTC'));
+                                    $date->setTimezone(new DateTimeZone('Asia/Kolkata'));
+                                    echo $date->format('d-M h:i:s A');
+                                    ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
